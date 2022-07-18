@@ -16,7 +16,10 @@ sentry = "0.27"
 sentry-tauri = {path = "../../../"}
 serde = {version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-tauri = {version = "1.0.0", features = ["api-all"] }
+# using the tauri crate works
+#tauri = {version = "1.0.4", features = ["api-all"] }
+# using the "same" tauri from git causes an error
+tauri = { git = "https://github.com/tauri-apps/tauri", tag = "v1.0.4", features = ["api-all"] }
 
 [features]
 # by default Tauri runs in production mode
